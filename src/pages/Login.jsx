@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Login = () => {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
-
+    // const [ loading, setLoading ] = useState(false);
 
     // const handleChange = (e) => {
     //     setFormData({...formData, [e.target.value]: e.target.value });
@@ -12,17 +12,20 @@ const Login = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(email, password);
+        setEmail('');
+        setPassword('');
     }
     
   return (
     <div className='wrapper'>
         <div className='login-layout'>
-            <section>
-                <h4 className='login_header'>Login</h4>
-                <span className='sub_header'>Securely login to your account</span>
-            </section>
             <form onSubmit={onSubmit}>
-                <div style={{marginLeft: "30px"}}>
+                <div style={{marginBottom: '30px'}}>
+                    <h4 className='login_header'>Login</h4>
+                    <span className='sub_header'>Securely login to your account</span>
+                </div>
+
+                <div id='margin_left'>
                     <label htmlFor='email' className='label'>Email address</label>
                     <input 
                         type="email"
@@ -35,7 +38,7 @@ const Login = () => {
                     />
                 </div>
 
-                <div style={{marginLeft: "30px"}} >
+                <div id='margin_left'>
                     <label htmlFor='password' className='label'>Password</label>
                     <span className='reset_password'>Reset Password</span>
                     <input 

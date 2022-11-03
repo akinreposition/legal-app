@@ -18,7 +18,7 @@
 .login_header {
     width: 12.5rem;
     height: 28px;
-    margin-left: -30px;
+    margin-left: 10px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 800;
@@ -28,16 +28,19 @@
     color: var(--black);
 }
 .sub_header {
-    margin-left: -30px;
+    margin-left: 10px;
     font-size: 16px;
     line-height: 20px;
+}
+#margin_left {
+    margin-left: 10px;
 }
 
 .reset_password {
     /* position: absolute; */
     /* width: 119px;
     height: 20px; */
-    margin-left: 140px;
+    margin-left: 5.75rem;
     top: 320px;
     cursor: pointer;
     text-align: right;
@@ -47,7 +50,6 @@
     order: 1;
     flex-grow: 0;
     z-index: 1;
-
 }
 
 .reset_password:hover {
@@ -74,11 +76,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
     margin-bottom: 30px;
     padding: 14px 16px;
     gap: 16px;
-    width: 82%;
+    width: 88%;
     height: 48px;
     background: var(--black);
     border-radius: 6px;
@@ -107,7 +110,7 @@
     .login_header{
         width: 25rem;
         height: 28px;
-        margin-left: 25px;
+        /* margin-left: 25px; */
         font-family: 'Nunito Sans';
         font-weight: 800;
         font-size: 24px;
@@ -115,9 +118,13 @@
     }
 
     .sub_header {
-        margin-left: 25px;
+        /* margin-left: 25px; */
         font-size: 16px;
         line-height: 20px;
+    }
+
+    #margin_left {
+        margin-left: 10px;
     }
 
     .label {
@@ -130,7 +137,7 @@
         position: relative;
         width: 119px;
         height: 20px;
-        left: 205px;
+        left: 120px;
         top: 0px;
         cursor: pointer;
         text-align: right;
@@ -158,10 +165,11 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-top: 20px;
         padding: 14px 16px;
         gap: 16px;
-        width: 400px;
-        height: 48px;
+        width: 98%;
+        height: 52px;
         background: #000000;
         color: #FFFFFF;
         border-radius: 6px;
