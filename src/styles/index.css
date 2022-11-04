@@ -1,2 +1,4 @@
 @import "./layout/NavBar.css";
+@import "./layout/card.css";
 @import "./pages/login.css";
+@import "./pages/resetpassword.css";
