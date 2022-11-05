@@ -1,42 +1,44 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react'
 import Card from '../components/layout/Card'
 
-const Register = () => {
-    const [ email, setEmail ] = useState('');
+const CreateNewPassword = () => {
+    const [ code, setCode ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ password2, setPassword2 ] = useState('');
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(email, password);
-        setEmail('');
+        console.log(code, password, password2);
+        setCode('');
         setPassword('');
         setPassword2('')
     }
   return (
-    <div>
+    <>
         <Card>
-            <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
                 <div style={{marginBottom: '30px'}}>
-                    <h4 className='reg_header'>Create my Account</h4>
-                    <span className='sub_header'>Securely create your account</span>
+                    <h4 className='txt_header'>Create New Password</h4>
+                    <p className='sub_txt'>
+                        Please enter the reset code sent to your email address and create a new password 
+                    </p>
                 </div>
 
                 <div id='margin_left'>
-                    <label htmlFor='email' className='label'>Email address</label>
+                    <label htmlFor='email' className='label'>Enter Code</label>
                     <input 
-                        type="email"
-                        name='email'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder= "you@domain.com"
+                        type="number"
+                        name='code'
+                        value={code}
+                        onChange={(e) => setCode(e.target.value)}
+                        placeholder= "e.g 654678"
                         className='input'
                         required
                     />
                 </div>
                 {}
                 <div id='margin_left'>
-                    <label htmlFor=' create password' className='label'>Create Password</label>
+                    <label htmlFor='New password' className='label'>New password</label>
                     <input 
                         type="password"
                         name='password'
@@ -50,7 +52,7 @@ const Register = () => {
                 </div>
 
                 <div id='margin_left'>
-                    <label htmlFor=' create password' className='label'>Confirm Password</label>
+                    <label htmlFor='Confirm password' className='label'>Confirm Password</label>
                     <input 
                         type="password"
                         name='password2'
@@ -63,19 +65,16 @@ const Register = () => {
                     />
                 </div>
                 
-                <div>
-                <p className='TandC'>By proceeding you agree to Sigma Terms and Conditions, Waiver and Indemnity</p>
-                </div>
                 <button 
                     type="submit"
                     className='btn_login'
                 >
-                Continue
+                Create New Password
                 </button> 
             </form>
         </Card>
-    </div>
+    </>
   )
 }
 
-export default Register
+export default CreateNewPassword

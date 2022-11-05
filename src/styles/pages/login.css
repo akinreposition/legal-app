@@ -9,12 +9,13 @@
     line-height: 28px;
     font-feature-settings: 'tnum' on, 'lnum' on;
     color: var(--black);
+
 }
 .sub_header {
     margin-left: 10px;
     font-size: 16px;
     line-height: 20px;
-}
+} 
 #margin_left {
     margin-left: 10px;
 }
@@ -38,43 +39,7 @@
 .reset_password:hover {
     color: var(--grey);
 }
-.input {
-    box-sizing: border-box;
-    /* display: flex; */
-    flex-direction: row;
-    align-items: center;
-    padding: 16px;
-    gap: 16px;
-    margin: 10px auto;
-    
-    width: 90%;
-    background: var(--white);
-    border: 1px solid var(--grey-input);
-    border-radius: 8px;
 
-}
-
-.btn_login {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    padding: 14px 16px;
-    gap: 16px;
-    width: 88%;
-    height: 48px;
-    background: var(--black);
-    border-radius: 6px;
-    align-self: stretch;
-    flex-grow: 0;
-}
-.btn_login:hover {
-    background: #FFFFFF;
-    color: #000000;
-}
 
 .no_acct {
     height: 20px;
@@ -127,12 +92,6 @@
         margin-left: 10px;
     }
 
-    .label {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px
-    }
-
     .reset_password {
         position: relative;
         width: 119px;
@@ -144,40 +103,5 @@
         font-feature-settings: 'tnum' on, 'lnum' on;
         
     }
-    
-    .input {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 16px;
-        gap: 16px;
-        width: 100%;
-        height: 52px;
-        flex: none;
-        order: 1;
-        align-self: stretch;
-        flex-grow: 0
-    }
-
-    .btn_login {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-        padding: 14px 16px;
-        gap: 16px;
-        width: 98%;
-        height: 52px;
-        background: #000000;
-        color: #FFFFFF;
-        border-radius: 6px;
-        flex: none;
-        order: 2;
-        align-self: stretch;
-        flex-grow: 0;
-        cursor: pointer;
-    }
-    
+        
 }

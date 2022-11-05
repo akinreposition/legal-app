@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ResetPassword from './pages/ResetPassword';
+import CreateNewPassword from './pages/CreateNewPassword';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/resetpassword' element={<ResetPassword />} />
+          <Route path='/createnewpassword' element={<CreateNewPassword />} />
         </Routes>
       </Router>
     </>

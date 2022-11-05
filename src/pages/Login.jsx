@@ -20,6 +20,7 @@ const Login = () => {
         console.log(email, password);
         setEmail('');
         setPassword('');
+
     }
 
     const resetPassword = () => navigate('/resetpassword');
@@ -55,7 +56,7 @@ const Login = () => {
                         name='password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder= "password"
+                        placeholder= "Enter 8 characters or more"
                         className='input'
                         minLength={8}
                         required
