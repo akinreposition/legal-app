@@ -2,11 +2,11 @@
     width: 100%;
     justify-content: space-between;
 }
-.login-layout {
+.layout {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px auto;
+    margin: 0px auto;
     padding: 8px;
     gap: 40px;
     width: 90%;
@@ -15,8 +15,12 @@
     border-radius: 12px;
 }
 
+.layout-center {
+    margin:  auto;
+}
+
 @media (min-width: 576px) {
-    .login-layout {
+    .layout {
         display: flex;
         flex-direction: column;
         align-items: center;

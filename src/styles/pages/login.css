@@ -29,7 +29,7 @@
     cursor: pointer;
     text-align: right;
     font-feature-settings: 'tnum' on, 'lnum' on;
-    color: #76B82A;
+    color: var(--brown);
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -50,7 +50,7 @@
     line-height: 20px;
     text-align: center;
     font-feature-settings: 'tnum' on, 'lnum' on;
-    color: var(--grey);
+    color: var(--white);
     flex: none;
     order: 0;
     flex-grow: 0;

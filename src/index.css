@@ -12,7 +12,8 @@
   --black1: #000000;
   --black2: #333333;
   --white:  #FFFFFF;
-  --lemon-green:  #76B82A;
+  --brown: #9B6B30;
+  ;
   --grey:  #79787A;
   --grey-input: #ADADAD;
 }
@@ -30,6 +31,16 @@ body {
   font-family: 'Nunito', sans-serif;
   font-family: 'Quicksand', sans-serif;
   height: 100vh;
+  
+}
+.hero-image {
+  background-image: url("./assets/images/app_bg.png");
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .input {
