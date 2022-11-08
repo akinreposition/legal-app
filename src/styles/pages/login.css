@@ -1,6 +1,7 @@
 .login_header {
     width: 12.5rem;
     height: 28px;
+    margin-bottom: 15px;
     margin-left: 10px;
     font-family: 'Nunito Sans';
     font-style: normal;
@@ -13,6 +14,7 @@
 }
 .sub_header {
     margin-left: 10px;
+    font-weight: 600;
     font-size: 16px;
     line-height: 20px;
 } 
@@ -24,7 +26,8 @@
     /* position: absolute; */
     /* width: 119px;
     height: 20px; */
-    margin-left: 5.75rem;
+    font-weight: 600;
+    margin-left: 5rem;
     top: 320px;
     cursor: pointer;
     text-align: right;
@@ -42,6 +45,7 @@
 
 
 .no_acct {
+    margin-top: 20px;
     height: 20px;
     font-family: 'Nunito Sans';
     font-style: normal;

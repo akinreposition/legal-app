@@ -43,6 +43,11 @@ body {
   position: relative;
 }
 
+/* input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset */
 .input {
   box-sizing: border-box;
   /* display: flex; */

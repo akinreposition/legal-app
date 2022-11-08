@@ -1,6 +1,6 @@
 /* @import "./variables.scss"; */
-@import "./layout/NavBar.css";
-@import "./layout/card.css";
+@import "./components/layout/NavBar.css";
+@import "./components/layout/card.css";
 @import "./pages/login.css";
 @import "./pages/register.css";
 @import "./pages/resetpassword.css";

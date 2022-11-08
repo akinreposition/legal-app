@@ -10,15 +10,14 @@
     gap: 16px;
     width: 88%;
     height: 48px;
-    background: var(--black);
+    background: #000000;
+    color: #FFFFFF;
     border-radius: 6px;
     align-self: stretch;
     flex-grow: 0;
+    cursor: pointer;
 }
-.btn_login:hover {
-    background: #FFFFFF;
-    color: #000000;
-}
+
 
 @media (min-width: 576px) {
     .btn_login {
@@ -39,5 +38,9 @@
         align-self: stretch;
         flex-grow: 0; */
         cursor: pointer;
+    }
+    .btn_login:hover {
+        background: #FFFFFF;
+        color: #000000;
     }
 }
