@@ -2,7 +2,10 @@ import React from 'react'
 
 function Home() {
   return (
-    <h1>Legal App</h1>
+    <div className='hero-image'>
+        <div className='layout-center'>
+        </div>
+    </div>
   )
 }
 

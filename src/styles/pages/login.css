@@ -1,24 +1,8 @@
-.wrapper {
-    width: 100%;
-    justify-content: space-between;
-}
-.login-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px auto;
-    padding: 8px;
-    gap: 40px;
-    width: 90%;
-    background: var(--white);
-    box-shadow: 0px 2px 6px rgb(0 0 0 / 12%);
-    border-radius: 12px;
-}
-
 .login_header {
     width: 12.5rem;
     height: 28px;
-    margin-left: -30px;
+    margin-bottom: 15px;
+    margin-left: 10px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 800;
@@ -26,88 +10,76 @@
     line-height: 28px;
     font-feature-settings: 'tnum' on, 'lnum' on;
     color: var(--black);
+
 }
 .sub_header {
-    margin-left: -30px;
+    margin-left: 10px;
+    font-weight: 600;
     font-size: 16px;
     line-height: 20px;
+} 
+#margin_left {
+    margin-left: 10px;
 }
 
 .reset_password {
     /* position: absolute; */
     /* width: 119px;
     height: 20px; */
-    margin-left: 140px;
+    font-weight: 600;
+    margin-left: 5rem;
     top: 320px;
     cursor: pointer;
     text-align: right;
     font-feature-settings: 'tnum' on, 'lnum' on;
-    color: #76B82A;
+    color: var(--brown);
     flex: none;
     order: 1;
     flex-grow: 0;
     z-index: 1;
-
 }
 
 .reset_password:hover {
     color: var(--grey);
 }
-.input {
-    box-sizing: border-box;
-    /* display: flex; */
-    flex-direction: row;
-    align-items: center;
-    padding: 16px;
-    gap: 16px;
-    margin: 10px auto;
-    
-    width: 90%;
-    background: var(--white);
-    border: 1px solid var(--grey-input);
-    border-radius: 8px;
 
-}
 
-.btn_login {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    padding: 14px 16px;
-    gap: 16px;
-    width: 82%;
-    height: 48px;
-    background: var(--black);
-    border-radius: 6px;
-    align-self: stretch;
+.no_acct {
+    margin-top: 20px;
+    height: 20px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+    color: var(--white);
+    flex: none;
+    order: 0;
     flex-grow: 0;
 }
-.btn_login:hover {
-    background: #FFFFFF;
-    color: #000000;
+
+.cta_link {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+    cursor: pointer;
+    /* color: var(--black) !important;  */
+}
+.cta_link:hover {
+    color: #76B82A;
 }
 
-@media (min-width: 576px) {
-    .login-layout {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 32px;
-        gap: 40px;
-        width: 464px;
-        height: 420px;    
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
-    
+@media (min-width: 576px) {   
     .login_header{
         width: 25rem;
         height: 28px;
-        margin-left: 25px;
+        /* margin-left: 25px; */
         font-family: 'Nunito Sans';
         font-weight: 800;
         font-size: 24px;
@@ -115,61 +87,25 @@
     }
 
     .sub_header {
-        margin-left: 25px;
+        /* margin-left: 25px; */
         font-size: 16px;
         line-height: 20px;
     }
 
-    .label {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px
+    #margin_left {
+        margin-left: 10px;
     }
 
     .reset_password {
         position: relative;
         width: 119px;
         height: 20px;
-        left: 205px;
+        left: 120px;
         top: 0px;
         cursor: pointer;
         text-align: right;
         font-feature-settings: 'tnum' on, 'lnum' on;
         
     }
-    
-    .input {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 16px;
-        gap: 16px;
-        width: 100%;
-        height: 52px;
-        flex: none;
-        order: 1;
-        align-self: stretch;
-        flex-grow: 0
-    }
-
-    .btn_login {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 14px 16px;
-        gap: 16px;
-        width: 400px;
-        height: 48px;
-        background: #000000;
-        color: #FFFFFF;
-        border-radius: 6px;
-        flex: none;
-        order: 2;
-        align-self: stretch;
-        flex-grow: 0;
-        cursor: pointer;
-    }
-    
+        
 }

@@ -1,24 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400&display=swap');
 @import "./styles/index.css";
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --black1: #000000;
-  --black2: #333333;
-  --white:  #FFFFFF;
-  --lemon-green:  #76B82A;
-  --grey:  #79787A;
-  --grey-input: #ADADAD;
-}
+
 body {
   font-family: 'Nunito', sans-serif;
   font-family: 'Quicksand', sans-serif;
   height: 100vh;
+  
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+.hero-image {
+  background-image: url("./assets/images/app_bg.png");
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+ input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset */
+
+
+.form-img {
+  display: none;
+}
+.label {
+  display: none;
+}
+
+.input {
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 16px;
+  margin: 10px auto;
+  height: 20px;
+  width: 60%;
+  background: white;
+  border: 1px solid gray-light;
+  border-radius: 8px;
+}
+
+
+@media (min-width: 576px ) {
+  .input {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 16px;
+    width: 60%;
+    height: 40px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0
+  }
+
+  .label {
+    color: grey;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px
+  }
+
+  .form-img {
+    display: block;
+  }
+}
