@@ -12,6 +12,7 @@ module.exports = {
     },
     colors: {
       'white': '#ffffff',
+      "input-box": "#C4C4C4",
       'blue': '#1fb6ff',
       'pink': '#ff49db',
       'orange': '#ff7849',
@@ -19,6 +20,7 @@ module.exports = {
       'gray-dark': '#273444',
       'gray': '#8492a6',
       'gray-light': '#d3dce6',
+      'btn': '#A38251',
     },
     
   },

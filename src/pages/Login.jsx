@@ -8,7 +8,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     // component use state
-    // const [ email, setEmail ] = useState('');
+    const [ email, setEmail ] = useState('');
     // const [ password, setPassword ] = useState('');
     // const [ loading, setLoading ] = useState(false);
 
@@ -28,44 +28,53 @@ const Login = () => {
     // const register = () => navigate('/register');
     
   return (
-        <div class="m-12 py-8 px-8 max-w-sm mx-auto bg-white shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
-            <img class="block mx-auto h-24 sm:mx-0 sm:shrink-0 lg:rounded" src={app_bg} alt="login" />
-            <div class="text-center space-y-2 sm:text-left">
-            <div class="space-y-0.5">
-                <h5 class="text-md text-black font-bold">
-                    SMART SOLUTIONS
-                </h5>
-                <p class=" mt-9 text-center text-sm text-black font-bold">
-                    LOGIN PAGE
-                </p>
-                <form class="text-slate-500 font-medium">
-                Product Engineer
-                </form>
-            </div>
-            <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button>
+    <Card>
+        <div className="m-6 flex py-4 px-4  mx-auto  space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+          <img className="w-1/2 form-img block mx-auto sm:mx-0 sm:shrink-0 lg:rounded" src={app_bg} alt="login" loading='lazy'/>
+            <div className="w-1/2 text-center space-y-2 sm:text-left">
+                <div className="space-y-0.5 w-80">
+                    <span className="text-md text-black sm:text-center md:text-center font-bold">
+                        SMART SOLUTIONS
+                    </span>
+                    <h6 className="md:ml-8 text-md sm:text-center mt-5 md:text-center text-black font-bold">
+                        LOGIN PAGE
+                    </h6>
+                    <p className='text-sm'>Please login to your account</p>
+
+                    <form className="text-slate-500 font-medium">
+                        <div className='py-1'>
+                            <label htmlFor='username' className='label'>Username</label>
+                            <input 
+                                type='email'
+                                name='email'
+                                // value={email}
+                                placeholder="Enter username"
+                                // onChange={}
+                                className='input border outline-input-box'
+                            />
+                        </div>
+
+                        <div className='py-1'>
+                            <label htmlFor='password' className='label'>Password</label>
+                            <input 
+                                type='password'
+                                name='password'
+                                // value={password}
+                                placeholder="Enter password"
+                                // onChange={}
+                                className='input border outline-input-box'
+                            />
+                        </div>
+
+                        <div>
+                        <button className="px-4 py-1 text-sm  text-white bg-btn text-purple-600 font-semibold rounded-lg w-48 border border-btn hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Login</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
-    // <Card>
-    //     <div className='flex flew-row items-center container mx-auto px-4 md:container md:mx-auto sm:container sm:py-4 '>
-            
-    //             <img src={app_bg} width="100px" height="100px" className='basis-1/6' title='justic logo' alt='logo'/>
-            
-           
-    //             <form>
-    //                 <div>
-    //                 <label htmlFor='email'>Email</label>
-    //                 <input 
-    //                     placeholder='email'
-    //                 />
-    //                 </div>
-    //                 <label htmlFor='password'>Password</label>
-    //                 <input 
-    //                     placeholder='password'
-    //                 />                
-    //             </form>
-          
-    //     </div>
-    // </Card>
+    </Card>
   )
 };
 
