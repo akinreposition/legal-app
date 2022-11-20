@@ -65,6 +65,16 @@ const Login = () => {
                                 className='input border outline-input-box'
                             />
                         </div>
+                        <div className='py-1'>
+                            <label htmlFor='remember me' className='label'>remember me</label>
+                            <input 
+                                type='checkbox'
+                                name='rememberMe'
+                                // value={password}
+                                // onChange={}
+                                className='btn-check'
+                            />
+                        </div>
 
                         <div>
                         <button className="px-4 py-1 text-sm  text-white bg-btn text-purple-600 font-semibold rounded-lg w-48 border border-btn hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Login</button>
