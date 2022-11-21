@@ -1,20 +1,19 @@
 import React,{ useState } from 'react';
+import {useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'
 import Card from '../components/layout/Card'
+import { register, reset } from "../features/auth/authSlice"
 
-const Register = () => {
-    const navigate = useNavigate();
-    
+const Register = () => {    
     const [ formData, setFormData ] = useState({
         email: '',
         password: '',
         confirmPassword: '',
     })
-    const [ passwordError, setPasswordError ] = useState({
-        email: '',
-        password: '',
-        confirmPassword: '',
-    });
+    
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     
     const { email, password, confirmPassword } = formData;
 
@@ -44,7 +43,6 @@ const Register = () => {
             password: '',
             confirmPassword: '',
         })
-        setPasswordError('');
         navigate('/#')
     }
   return (
@@ -68,7 +66,7 @@ const Register = () => {
                             className='input'
                             required
                         />
-                        {passwordError.username && <span className='err'>{passwordError.username}</span>}
+                        
                     </div>
                     {}
                     <div  id='margin_left'>
@@ -83,7 +81,7 @@ const Register = () => {
                             minLength={8}
                             required
                         />
-                        {passwordError.password && <span className='err'>{passwordError.password}</span>}
+                        
                     </div>
 
                     <div id='margin_left'>
@@ -98,7 +96,7 @@ const Register = () => {
                             minLength={8}
                             required
                         />
-                        {passwordError.confirmPassword && <span className='err'>{passwordError.confirmPassword}</span>}
+                        
                     </div>
                     
                     <div>

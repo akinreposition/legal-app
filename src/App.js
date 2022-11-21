@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import NavBar from './components/layout/NavBar';
 // import Home from './pages/Home';
 import Login from './pages/Login';
@@ -21,7 +23,7 @@ function App() {
             <Route path='/createnewpassword' element={<CreateNewPassword />} />
           </Routes>
         </Router>
-  
+        <ToastContainer />
     </div>
   );
 }
