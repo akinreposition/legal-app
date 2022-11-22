@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import app_bg from "../assets/images/app_bg.png"
+import justics from "../assets/images/justics.png"
 import Card from '../components/layout/Card';
 
 const Login = () => {
@@ -29,8 +29,8 @@ const Login = () => {
     
   return (
     <Card>
-        <div className="m-6 flex py-4 px-4  mx-auto  space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
-          <img className="w-1/2 form-img block mx-auto sm:mx-0 sm:shrink-0 lg:rounded" src={app_bg} alt="login" loading='lazy'/>
+        <div className="m-6 flex py-4 px-4  mx-auto space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+          <img className="w-1/2 form-img block mx-auto sm:mx-0 sm:shrink-0 lg:rounded" width="40%" src={justics} alt="login" loading='lazy'/>
             <div className="w-1/2 text-center space-y-2 sm:text-left">
                 <div className="space-y-0.5 w-80">
                     <span className="text-md text-black sm:text-center md:text-center font-bold">

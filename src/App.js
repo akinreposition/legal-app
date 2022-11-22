@@ -9,7 +9,6 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import ResetPassword from './pages/ResetPassword';
 import CreateNewPassword from './pages/CreateNewPassword';
-import './App.css';
 
 const App = () => {
   return (
