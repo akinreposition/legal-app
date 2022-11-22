@@ -1,7 +1,7 @@
  import axios from 'axios'
 
 //  Base url 
- const API_URL = "/api/user/"
+ const API_URL = "http://localhost:5000/api/user/"
 
 // Register new user
 const register = async ( userData ) => {

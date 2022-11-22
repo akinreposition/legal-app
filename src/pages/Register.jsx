@@ -1,9 +1,10 @@
-import React,{ useState } from 'react';
+import React,{ useState, useEffect } from 'react';
 import {useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify'
 import Card from '../components/layout/Card'
-import { register, reset } from "../features/auth/authSlice"
+import { register, reset } from "../features/auth/authSlice";
+import Spinner from '../components/Spinner';
 
 const Register = () => {    
     const [ formData, setFormData ] = useState({
@@ -14,6 +15,10 @@ const Register = () => {
     
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    const { user, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.auth
+    )
     
     const { email, password, confirmPassword } = formData;
 
@@ -21,6 +26,20 @@ const Register = () => {
         let regex = /^(?=(?:[^a-z]*[a-z]){2})(?=(?:[^A-Z]*[A-Z]){2})(?=(?:\D*\d){2})(?=(?:[^!@#$%^&*)(]*[!@#$%^&*)(]){2}).{8,}$/;
         return regex.test(password);
     }
+
+    useEffect(() => {
+        if(isError) {
+            toast.error(message)
+        }
+
+        if(isSuccess || user ) {
+            navigate('/login')
+        }
+
+        dispatch(reset())
+
+    }, [user, isError, isSuccess, message, navigate, dispatch])
+    
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -28,16 +47,17 @@ const Register = () => {
     const onSubmit = (e) => {
         e.preventDefault();  
         checkPasswordComplexity(password);
-        // if (password !== confirmPassword) {
-        //     setPasswordError("Password doesn't match!");
-    
-        // } else {
-        //     checkPasswordComplexity(password);
-        //     setTimeout(() => {
-        //         navigate('#');
-        //     }, 5000);
-        // }
-        console.log(email, password, confirmPassword);
+        if ( password !== confirmPassword) {
+            toast.error('Passwords do not match')
+        } else {
+            const userData = {
+                email,
+                password
+            }
+            console.log(userData);
+            dispatch(register(userData))
+        }
+        
         setFormData({
             email: '',
             password: '',
@@ -45,6 +65,11 @@ const Register = () => {
         })
         navigate('/#')
     }
+
+    if(isLoading) {
+        return <Spinner />
+    }
+    
   return (
     <div className='hero-image'>
         <div className='layout-center'>
