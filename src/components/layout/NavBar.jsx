@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import legal_logo from '../../assets/icons/legal_logo.png';
-import { FaSignInAlt,  FaUser } from 'react-icons/fa';   // FaSignOutAlt,
+// import { FaSignInAlt,  FaUser } from 'react-icons/fa';   // FaSignOutAlt,
 
 const NavBar = () => {
 
@@ -45,10 +45,10 @@ const NavBar = () => {
         </Link>
 
           {/* Hamburger Icon */}
-        <button id="menu-btn" className=" block hamburger md:hidden focus:outline-none">
+        <button id="menu-btn" className="block hamburger md:hidden focus:outline-none">
           <span className="hamburger-top"></span>
           <span className="hamburger-middle"></span>
-          <span className="hamburger-buttom"></span>
+          <span className="hamburger-bottom"></span>
         </button>
         
       </div>
