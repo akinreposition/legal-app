@@ -1,80 +1,105 @@
-import React, { useState } from 'react'
-import Card from '../components/layout/Card'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'
+import { resetPassword, reset } from "../features/auth/authSlice"
+import Spinner from '../components/Spinner';
 
 const CreateNewPassword = () => {
     const [ code, setCode ] = useState('');
-    const [ password, setPassword ] = useState('');
-    const [ password2, setPassword2 ] = useState('');
+    const [ newPassword, setNewPassword ] = useState('');
+    const [ confirmNewPassword, setConfirmNewPassword ] = useState('');
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const { user, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.auth
+    )
+
+    useEffect(() => {
+        if(isError) {
+            toast.error(message)
+        }
+
+        if(isSuccess || user ) {
+            navigate('/login')
+        }
+
+        dispatch(reset())
+
+    }, [user, isError, isSuccess, message, navigate, dispatch])
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(code, password, password2);
-        setCode('');
-        setPassword('');
-        setPassword2('')
+
+        if ( newPassword !== confirmNewPassword) {
+            toast.error('Passwords do not match')
+        } else {
+            const userNewPassword = { code, newPassword }
+            console.log(userNewPassword);
+            dispatch(resetPassword(userNewPassword))
+        }
     }
+
+    if(isLoading) {
+        return <Spinner />
+    }
+
   return (
-    <div className='hero-image'>
-        <div className='layout-center'>
-            <Card>
+    <div className='loadingSpinnerContainer'>
+        <div className='card'>
+            <div className='p-6'>
+                <h4 className='px-5 text-center font-extrabold'>Create New Password</h4>
+                <p className='text-left w-auto font-normal mb-4'>Please enter the reset code sent to your email address and create a new password</p>
                 <form onSubmit={onSubmit}>
-                    <div style={{marginBottom: '30px'}}>
-                        <h4 className='txt_header'>Create New Password</h4>
-                        <p className='sub_txt'>
-                            Please enter the reset code sent to your email address and create a new password 
-                        </p>
-                    </div>
+                    <div className="mb-4">
+                            <label className="block text-gray-light text-sm font-bold mb-2 " htmlFor="code">
+                                Enter Code
+                            </label>
+                            <input className="shadow appearance-none border border-gray-light rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline valid:border-green-500 invalid:border-red-500"
+                                name="code" 
+                                type="number" 
+                                placeholder="you@mail.com"
+                                value={code}
+                                onChange={(e) => {setCode(e.target.value)}}
+                                required
+                                />
+                        </div>
 
-                    <div id='margin_left'>
-                        <label htmlFor='email' className='label'>Enter Code</label>
-                        <input 
-                            type="number"
-                            name='code'
-                            value={code}
-                            onChange={(e) => setCode(e.target.value)}
-                            placeholder= "e.g 654678"
-                            className='input'
-                            required
-                        />
-                    </div>
-                    {}
-                    <div id='margin_left'>
-                        <label htmlFor='New password' className='label'>New password</label>
-                        <input 
-                            type="password"
-                            name='password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder= "Enter 8 characters or more"
-                            className='input'
-                            minLength={8}
-                            required
-                        />
-                    </div>
-
-                    <div id='margin_left'>
-                        <label htmlFor='Confirm password' className='label'>Confirm Password</label>
-                        <input 
-                            type="password"
-                            name='password2'
-                            value={password2}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder= "Enter 8 characters or more"
-                            className='input'
-                            minLength={8}
-                            required
-                        />
-                    </div>
-                    
-                    <button 
-                        type="submit"
-                        className='btn_login'
-                    >
-                    Create New Password
-                    </button> 
+                        <div className="mb-4">
+                            <label className="block text-gray-light text-sm font-bold mb-2 " htmlFor="newPassword">
+                                New Password
+                            </label>
+                            <input className="shadow appearance-none border border-gray-light rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline valid:border-green-500 invalid:border-red-500"
+                                name="newPassword" 
+                                type="password" 
+                                placeholder="Enter 8 characters or more"
+                                value={newPassword}
+                                onChange={(e) => {setNewPassword(e.target.value)}}
+                                required
+                                />
+                        </div>
+                        
+                        <div className="mb-4">
+                            <label className="block text-gray-light text-sm font-bold mb-2 " htmlFor=" confirm Password">
+                                Confirm Password
+                            </label>
+                            <input className="shadow appearance-none border border-gray-light rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline valid:border-green-500 invalid:border-red-500"
+                                name="confirmNewPassword" 
+                                type="password" 
+                                placeholder="Enter 8 characters or more"
+                                value={confirmNewPassword}
+                                onChange={(e) => {setConfirmNewPassword(e.target.value)}}
+                                required
+                                />
+                        </div>
+                        <button className="bg-btn hover:bg-gray-light text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Create Password
+                        </button>
                 </form>
-            </Card>
-        </div>
+            </div>
+        </div>    
     </div>
   )
 }

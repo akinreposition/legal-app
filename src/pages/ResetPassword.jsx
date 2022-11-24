@@ -1,49 +1,68 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Card from '../components/layout/Card'
+import { toast } from 'react-toastify'
+import { resetPassword, reset } from "../features/auth/authSlice"
+import Spinner from '../components/Spinner';
 
 const ResetPassword = () => {
-    const navigate = useNavigate();
     const [ email, setEmail ] = useState('');
-    const login = () => navigate("/login");
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const { user, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.auth
+    )
+
+    useEffect(() => {
+        if(isError) {
+            toast.error(message)
+        }
+
+        if(isSuccess || user ) {
+            navigate('/createnewpassword')
+        }
+
+        dispatch(reset())
+
+    }, [user, isError, isSuccess, message, navigate, dispatch])
 
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(email);
-        setTimeout(() => {
-            navigate("/createnewpassword");
-        }, 5000)
-        setEmail('');
+        dispatch(resetPassword(email))
+    }
+
+    if(isLoading) {
+        return <Spinner />
     }
 
   return (
     <div className='loadingSpinnerContainer'>
-        <div className='justify-center'>
-            <Card>
-                <h4 className='mx-auto text-center font-extrabold'>Reset Password</h4>
-                <p className='txt'>A reset code will be sent to your registered email address</p>
+        <div className='card'>
+            <div className='p-6'>
+                <h4 className='px-5 text-center font-extrabold'>Reset Password</h4>
+                <p className='text-left w-auto font-normal mb-4'>A reset code will be sent to your registered email address</p>
                 <form onSubmit={onSubmit}>
-
-                    <div id='margin_left'>
-                        <label htmlFor='email' className='label'>Email address</label>
-                        <input 
-                            type="email"
-                            name='email'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder= "you@domain.com"
-                            className='input'
-                            required
-                        />
-                    </div>
-                    <button 
-                    type="submit"
-                    className='btn_login'
-                    >
-                    Reset Password
-                    </button>
+                    <div className="mb-4">
+                            <label className="block text-gray-light text-sm font-bold mb-2 " htmlFor="email">
+                                Email Address
+                            </label>
+                            <input className="shadow appearance-none border border-gray-light rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline valid:border-green-500 invalid:border-red-500"
+                                name="email" 
+                                type="email" 
+                                placeholder="you@mail.com"
+                                value={email}
+                                onChange={(e) => {setEmail(e.target.value)}}
+                                required
+                                />
+                        </div>
+                        <button className="bg-btn hover:bg-gray-light text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Reset Password
+                        </button>
                 </form>
-            </Card>
+            </div>
         </div>    
     </div>
   )

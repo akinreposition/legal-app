@@ -11,10 +11,6 @@ const Login = () => {
     // component use state
     const [ email , setEmail ] = useState('');
     const [ password , setPassword ] = useState('');
-    // const [ loginData, setLoginData ] = useState({
-    //     email: "",
-    //     password: ""
-    // });
 
     // initialize the navigate router
     const navigate = useNavigate();
@@ -23,8 +19,6 @@ const Login = () => {
     const { user, isLoading, isError, isSuccess, message } = useSelector(
         (state) => state.auth
     )
-    
-    // const { email, password } = loginData;
     
     useEffect(() => {
         if(isError) {
@@ -37,12 +31,7 @@ const Login = () => {
 
         dispatch(reset())
 
-    }, [user, isError, isSuccess, message, navigate, dispatch])
-
-    // const handleChange = (e) => {
-    //     setLoginData({...loginData, [e.target.value]: e.target.value });
-    // }
-    
+    }, [user, isError, isSuccess, message, navigate, dispatch])  
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -52,14 +41,6 @@ const Login = () => {
         }
         console.log(userData);
         dispatch(login(userData))
-        // if ( email === "") {
-        //     toast.error('Enter valid email')
-        // } else if ( password === "") {
-        //     toast.error('Enter correct password')
-        // } else {
-            
-        // }
-    
     }
 
     const forgotPassword = () => navigate('/resetpassword');

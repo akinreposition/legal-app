@@ -21,8 +21,20 @@ const login = async ( userData ) => {
     }
      return response.data
 }
+
+// Login user
+const resetPassword = async ( email ) => {
+    const response = await axios.post(API_URL, email)
+    if(response.data) {
+        localStorage.setItem('email', JSON.stringify(response.data))
+    }
+    return response.data
+}
+
+
 const authService = {
     register,
-    login
+    login,
+    resetPassword
 }
 export default authService

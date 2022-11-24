@@ -58,12 +58,6 @@ const Register = () => {
             console.log(userData);
             dispatch(register(userData))
         }
-        
-        setFormData({
-            email: '',
-            password: '',
-            password2: '',
-        })
     }
 
     if(isLoading) {

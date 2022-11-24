@@ -12,7 +12,7 @@ import CreateNewPassword from './pages/CreateNewPassword';
 
 const App = () => {
   return (
-    <div>
+    <div className='subpixel-antialiased'>
       
         <Router>
           <NavBar />
