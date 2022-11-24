@@ -1,47 +1,24 @@
-.reg_header {
-    width: 12.5rem;
-    height: 28px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 28px;
-    font-feature-settings: 'tnum' on, 'lnum' on;
-    color: var(--black);
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0.5rem;
+    padding: 1rem 1rem;
+    
 }
 
-.sub_header {
-    margin-left: 10px;
-    font-size: 16px;
-    line-height: 20px;
-    color: var(--grey)
-}  
-
-.TandC {
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    font-feature-settings: 'tnum' on, 'lnum' on;
-    color: var(--black2);
-    margin-left: 12px;
-    width: 19rem;
+.child {
+    display: inline-block;
+    /* padding: 1rem 1rem; */
+    /* vertical-align: middle; */
 }
 
 @media (min-width: 576px) {   
-    .reg_header{
-        width: 25rem;
-        height: 28px;
-        /* margin-left: 25px; */
-        font-family: 'Nunito Sans';
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 28px;
+    .parent {
+        display: inline-block;
+        margin: 0.5rem;
+        padding: 1rem 1rem;
+        text-align: center;
     }
-    .TandC {
-        width: 20rem;
-    }
+    
 }

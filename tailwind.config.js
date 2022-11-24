@@ -10,18 +10,17 @@ module.exports = {
       lg: '976px',
       xl: '1440px',
     },
-    colors: {
-      'white': '#ffffff',
-      "input-box": "#C4C4C4",
-      'blue': '#1fb6ff',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
-      'btn': '#A38251',
+    extend: {
+      colors: {
+        'white': '#ffffff',
+        "input-box": "#C4C4C4",
+        'gray-dark': '#273444',
+        'gray': '#8492a6',
+        'gray-light': 'rgba(0, 0, 0, 0.5);',
+        'btn': '#A38251',
+      },
     },
+    
     
   },
   plugins: [],
