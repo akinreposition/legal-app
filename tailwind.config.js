@@ -16,7 +16,7 @@ module.exports = {
         "input-box": "#C4C4C4",
         'gray-dark': '#273444',
         'gray': '#8492a6',
-        'gray-light': '#d3dce6',
+        'gray-light': 'rgba(0, 0, 0, 0.5);',
         'btn': '#A38251',
       },
     },

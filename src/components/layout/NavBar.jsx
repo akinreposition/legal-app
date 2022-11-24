@@ -7,7 +7,7 @@ const NavBar = () => {
 
   return (
     // Navbar
-    <nav className="relative container mx-auto p-6">
+    <nav className="relative container mx-auto p-6 bg-fixed">
 
       {/* flex container */}
       <div className="flex items-center justify-between">
@@ -40,7 +40,7 @@ const NavBar = () => {
         </div>
 
         {/* Button */}
-        <Link to='/register' className='hidden md:block p-3 px-6 pt-2 text-white bg-btn rounded-full baseline hover:bg-gray'>
+        <Link to='/sign-up' className='hidden md:block p-3 px-6 pt-2 text-white bg-btn rounded-full baseline hover:bg-gray'>
           Sign up
         </Link>
 
@@ -56,10 +56,9 @@ const NavBar = () => {
 
       {/* mobile menu */}
       <div className="md:hidden">
-        <div id="menu" className='absolute flex flex-col items-center hidden self-end 
+        <div id="menu" className='absolute flex-col items-center hidden self-end 
         py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md'>
-          <Link to='/login' className='hover:text-gray-light'>
-             
+            <Link to='/login' className='hover:text-gray-light'>
               Login
             </Link>
             {/* <Link to='/register' className='hover:text-gray-light'>
