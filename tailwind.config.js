@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       colors: {
         'white': '#ffffff',
+        'black': '#000000',
         "input-box": "#C4C4C4",
         'gray-dark': '#273444',
         'gray': '#8492a6',
