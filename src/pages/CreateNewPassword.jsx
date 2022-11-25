@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify'
-import { resetPassword, reset } from "../features/auth/authSlice"
+import { createNewPassword, reset } from "../features/auth/authSlice"
 import Spinner from '../components/Spinner';
 
 const CreateNewPassword = () => {
@@ -36,9 +36,9 @@ const CreateNewPassword = () => {
         if ( newPassword !== confirmNewPassword) {
             toast.error('Passwords do not match')
         } else {
-            const userNewPassword = { code, newPassword }
-            console.log(userNewPassword);
-            dispatch(resetPassword(userNewPassword))
+            const userData = { code, newPassword }
+            console.log(userData);
+            dispatch(createNewPassword(userData))
         }
     }
 
@@ -50,11 +50,11 @@ const CreateNewPassword = () => {
     <div className='loadingSpinnerContainer'>
         <div className='card'>
             <div className='p-6'>
-                <h4 className='px-5 text-center font-extrabold'>Create New Password</h4>
-                <p className='text-left w-auto font-normal mb-4'>Please enter the reset code sent to your email address and create a new password</p>
+                <h2 className='px-5 text-center font-extrabold text-2xl'>Create New Password</h2>
+                <p className='text-left w-auto max-w-xs font-normal mb-4'>Please enter the reset code sent to your email address and create a new password</p>
                 <form onSubmit={onSubmit}>
                     <div className="mb-4">
-                            <label className="block text-gray-light text-sm font-bold mb-2 " htmlFor="code">
+                            <label className="block text-black text-sm font-extrabold mb-2 " htmlFor="code">
                                 Enter Code
                             </label>
                             <input className="shadow appearance-none border border-gray-light rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline valid:border-green-500 invalid:border-red-500"
@@ -68,7 +68,7 @@ const CreateNewPassword = () => {
                         </div>
 
                         <div className="mb-4">
-                            <label className="block text-gray-light text-sm font-bold mb-2 " htmlFor="newPassword">
+                            <label className="block text-black text-sm font-bold mb-2 " htmlFor="newPassword">
                                 New Password
                             </label>
                             <input className="shadow appearance-none border border-gray-light rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline valid:border-green-500 invalid:border-red-500"
@@ -82,7 +82,7 @@ const CreateNewPassword = () => {
                         </div>
                         
                         <div className="mb-4">
-                            <label className="block text-gray-light text-sm font-bold mb-2 " htmlFor=" confirm Password">
+                            <label className="block text-black text-sm font-bold mb-2 " htmlFor=" confirm Password">
                                 Confirm Password
                             </label>
                             <input className="shadow appearance-none border border-gray-light rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline valid:border-green-500 invalid:border-red-500"

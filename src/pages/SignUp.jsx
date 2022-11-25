@@ -34,7 +34,7 @@ const Register = () => {
         }
 
         if(isSuccess || user ) {
-            navigate('/login')
+            navigate('/')
         }
 
         dispatch(reset())
@@ -127,7 +127,7 @@ const Register = () => {
 
                         <div className="mt-3 flex items-center justify-between">
                         <span>Already have an account? </span>
-                        <a className="inline-block align-baseline font-bold text-sm text-btn hover:gray-light px-2" href="/login">
+                        <a className="inline-block align-baseline font-bold text-sm text-btn hover:gray-light px-2" href="/">
                             Login
                         </a>
                         </div>

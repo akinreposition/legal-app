@@ -40,6 +40,15 @@ export const resetPassword = createAsyncThunk('auth/resetPassword', async(email,
         return thunkAPI.rejectWithValue(message)
     }
 })
+// Create New Password
+export const createNewPassword = createAsyncThunk('auth/createNewPassword', async(email, thunkAPI) => {
+    try {
+        return await authService.createNewPassword(email)
+    } catch (error) {
+        const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString
+        return thunkAPI.rejectWithValue(message)
+    }
+})
 
 export const authSlice = createSlice({
     name: 'auth',

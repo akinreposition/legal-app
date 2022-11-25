@@ -21,31 +21,19 @@ const NavBar = () => {
 
         {/* Menu Items */}
         <div className="hidden md:flex space-x-6">
-            <Link to='/login' className='hover:text-gray-light'>
-              {/* <FaSignInAlt />  */}
+            {/* <Link to='/login' className='hover:text-gray-light'>
               Login
-            </Link>
-            {/* <Link to='/register' className='hover:text-gray-light'>
-              Register
             </Link> */}
-            <Link to='#' className='hover:text-gray-light'>
-              Contact Us
-            </Link>
-            <Link to='#' className='hover:text-gray-light'>
-              About Us
-            </Link>
-            <Link to='#' className='hover:text-gray-light'>
-              Career
-            </Link>
         </div>
 
         {/* Button */}
-        <Link to='/sign-up' className='hidden md:block p-3 px-6 pt-2 text-white bg-btn rounded-full baseline hover:bg-gray'>
+
+        {/* <Link to='/sign-up' className='hidden md:block p-3 px-6 pt-2 text-white bg-btn rounded-full baseline hover:bg-gray'>
           Sign up
-        </Link>
+        </Link> */}
 
           {/* Hamburger Icon */}
-        <button id="menu-btn" className="block hamburger md:hidden focus:outline-none">
+        <button id="menu-btn" className=" hamburger hidden focus:outline-none">
           <span className="hamburger-top"></span>
           <span className="hamburger-middle"></span>
           <span className="hamburger-bottom"></span>
@@ -60,19 +48,6 @@ const NavBar = () => {
         py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md'>
             <Link to='/login' className='hover:text-gray-light'>
               Login
-            </Link>
-            {/* <Link to='/register' className='hover:text-gray-light'>
-              
-              Register
-            </Link> */}
-            <Link to='#' className='hover:text-gray-light'>
-              Contact Us
-            </Link>
-            <Link to='#' className='hover:text-gray-light'>
-              About Us
-            </Link>
-            <Link to='#' className='hover:text-gray-light'>
-              Career
             </Link>
         </div>
       </div>  
